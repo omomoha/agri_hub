@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.v1.endpoints import auth, users, farms, listings, offers, contracts, escrow, orders, kyc
+from app.api.v1.endpoints import auth, users, farms, listings, offers, contracts, escrow, orders, kyc, health
 
 api_router = APIRouter()
 
@@ -13,3 +13,4 @@ api_router.include_router(contracts.router, prefix="/contracts", tags=["contract
 api_router.include_router(escrow.router, prefix="/escrow", tags=["escrow"])
 api_router.include_router(orders.router, prefix="/orders", tags=["orders"])
 api_router.include_router(kyc.router, prefix="/kyc", tags=["kyc"])
+api_router.include_router(health.router, prefix="/health", tags=["health"])
